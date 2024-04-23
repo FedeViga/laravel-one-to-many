@@ -14,8 +14,8 @@
       <li class="d-flex justify-content-between align-items-center list-group-item list-group-item" aria-current="true">
       <span>{{$type->title}}</span>
       <div>
+        <a href="{{route('types.edit', $type->id)}}" type="button" class="btn btn-sm btn-outline-warning">Edit</a>
         <button type="button" class="btn btn-sm btn-outline-danger">Delete</button>
-        <button type="button" class="btn btn-sm btn-outline-warning">Edit</button>
       </div>
       </li>
       @endforeach

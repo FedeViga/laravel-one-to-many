@@ -47,15 +47,22 @@ class TypeController extends Controller
      */
     public function edit(Type $type)
     {
-        //
+        return view('types.edit', compact('type'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(UpdateTypeRequest $request, Type $type)
+    public function update(StoreTypeRequest $request, Type $type)
     {
-        //
+
+        $request->validated();
+
+        $type->update($request->all());
+
+        $type->save();
+
+        return redirect()->route('types.index');
     }
 
     /**
