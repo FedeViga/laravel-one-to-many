@@ -28,6 +28,17 @@
                   </tr>
                   <tr>
                     <th scope="row" class="d-none d-md-table-cell">
+                        Project Type:
+                    </th>
+                    <td>
+                        <h5 class="d-block d-md-none">
+                            Project Type:
+                        </h5>
+                        <div class="ps-2 ps-md-0">{{$project->type?->title}}</div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <th scope="row" class="d-none d-md-table-cell">
                         Technologies:
                     </th>
                     <td>
