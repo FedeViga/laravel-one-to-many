@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Project;
 use App\Http\Requests\StoreProjectRequest;
+use App\Models\Type;
 use Illuminate\Support\Facades\Storage;
 
 class ProjectController extends Controller
@@ -23,7 +24,10 @@ class ProjectController extends Controller
      */
     public function create()
     {
-        return view('projects.create');
+
+        $types = Type::all();
+
+        return view('projects.create', compact('types'));
     }
 
     /**
@@ -45,7 +49,7 @@ class ProjectController extends Controller
 
         $newProject->save();
 
-        return redirect()->route('projects.index');
+        return redirect()->route('projects.show', $newProject->id);
     }
 
     /**
@@ -61,7 +65,10 @@ class ProjectController extends Controller
      */
     public function edit(Project $project)
     {
-        return view('projects.edit', compact('project'));
+
+        $types = Type::all();
+
+        return view('projects.edit', compact('project', 'types'));
     }
 
     /**
