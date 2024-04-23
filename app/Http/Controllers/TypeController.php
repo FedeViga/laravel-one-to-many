@@ -23,7 +23,7 @@ class TypeController extends Controller
      */
     public function create()
     {
-        //
+        return view('types.create');
     }
 
     /**
@@ -31,7 +31,15 @@ class TypeController extends Controller
      */
     public function store(StoreTypeRequest $request)
     {
-        //
+        $request->validated();
+
+        $newType = new Type();
+
+        $newType->fill($request->all());
+
+        $newType->save();
+
+        return redirect()->route('types.index');
     }
 
     /**

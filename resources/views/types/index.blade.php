@@ -19,8 +19,11 @@
       </div>
       </li>
       @endforeach
-
+      <div class="pt-3">
+        <a href="{{route('types.create')}}" class="btn btn-outline-light" href="">Add Type</a>
+      </div>
     </div>
+
   </div>
 
 @endsection
